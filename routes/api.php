@@ -17,3 +17,10 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::post('/sso', function () {
+    // random generate a token
+    $token = bin2hex(random_bytes(32));
+    return redirect('/test')->cookie('token', $token, 60);
+});
