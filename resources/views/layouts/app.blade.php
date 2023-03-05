@@ -10,29 +10,27 @@
 </head>
 
 @section('nav')
-    <nav>
+    <nav class="mb-5">
         <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/test">Test</a></li>
+            <li><a class="nav_title bg-rose-700">研發處核章計畫</a></li>
+            <li><a href="/home" class="nav_link">Home</a></li>
+            <li><a href="/test" class="nav_link">Test</a></li>
             <li class="float-right">
-                @isset($_COOKIE['token'])
-                    <a href="/logout">Logout</a>
+                @if (Session::has('user'))
+                    <a href="/logout" class="nav_link">Logout</a>
                 @else
-                    <a href="/login">Login</a>
-                    @endif
-                </li>
-            </ul>
+                    <a href="/login" class="nav_link">Login</a>
+                @endif
             </li>
-        </nav>
-    @show
+        </ul>
+        </li>
+    </nav>
+@show
 
-    <body>
-        <main>
-            @yield('main')
-        </main>
-        <footer>
-            @yield('foot')
-        </footer>
-    </body>
+<body>
+    <main class="mx-9 my-2">
+        @yield('main')
+    </main>
+</body>
 
-    </html>
+</html>

@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\testController;
+use App\Http\Controllers\homeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -19,8 +19,8 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/test', [testController::class, 'test']);
-Route::get('/logout', [testController::class, 'logout']);
+Route::get('/home', [homeController::class, 'home']);
+Route::get('/logout', [homeController::class, 'logout']);
 Route::get('/login', function (Request $req) {
     // return view('login', ['sso_url' => 'https://sso.nuu.edu.tw/preLogin.php']);
     return view('login', ['sso_url' => 'http://' . $req->getHttpHost() . '/api/sso']);

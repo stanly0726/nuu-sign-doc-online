@@ -2,19 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  h1 {
+    @apply text-2xl;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  h3 {
+    @apply text-lg;
+  }
+}
+
 nav ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: #333;
+  @apply bg-slate-800
 }
 
-nav li {
+nav ul li {
   float: left;
 }
 
-nav li a {
+.nav_link,
+.nav_title {
   display: block;
   color: white;
   text-align: center;
@@ -23,10 +38,6 @@ nav li a {
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
+.nav_link:hover {
   background-color: #111;
-}
-
-main {
-  background-color: cornflowerblue;
 }

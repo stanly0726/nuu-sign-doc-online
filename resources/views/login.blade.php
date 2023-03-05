@@ -6,13 +6,23 @@
 </head>
 
 <body>
-    <form name='redirect' action={{ $sso_url }} method="post">
-        <input type="hidden" name="system_name" value="資訊處服務窗口">
-        <input style="display: none" type="submit" value="提交">
-    </form>
+    <div>
+
+        <h1>login page</h1>
+        <p>
+            leave inputbox blank will randomlly generate a token for you
+            or you can specify token yourself
+        </p>
+        <form name='redirect' action={{ $sso_url }} method="post">
+            <input type="hidden" name="system_name" value="資訊處服務窗口">
+            token: <input name="token">
+            <input style="" type="submit" value="提交">
+        </form>
+
+    </div>
 
     <script type="text/javascript">
-        document.redirect.submit();
+        // document.redirect.submit();
     </script>
 
 </body>
